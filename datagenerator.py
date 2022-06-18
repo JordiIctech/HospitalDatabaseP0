@@ -34,21 +34,21 @@ print(rnd.choices(symptoms,weights=(1,1,1,1,1),k=(rnd.randint(1,4)))) #list, wei
 rows = []
  
 # field names
-fields = ['First Name', 'Last Name'] # Add ID
+fields = ["ID",'First Name', 'Last Name'] # Add ID
 htnames = int(len(LastNames)/2) # Half of Total Number of nNames
 print(htnames)
 
 for i in range(0,int(htnames)):
-    rows.append([MaleFirstNames[i],LastNames[i]]) # Add a third entry just with number i being passed
+    rows.append([i+1,MaleFirstNames[i],LastNames[i]]) # Add a third entry just with number i being passed
 
 for i in range(0,int(htnames)):
-    rows.append([FemaleFirstNames[i],LastNames[i+htnames]]) # Add a third entry just with number i being passed
+    rows.append([i+htnames+1,FemaleFirstNames[i],LastNames[i+htnames]]) # Add a third entry just with number i being passed
 
 print(rows)
 
-filename = "GeneratedMedicalData.csv"
+filename = "C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/GeneratedMedicalData.csv"
 
-with open(filename, 'w') as csvfile:
+with open(filename, 'w', newline='') as csvfile:
 
     csvwriter = csv.writer(csvfile)
 
