@@ -1,5 +1,7 @@
 import names
 import random as rnd
+import csv
+
 print("#----------------------------------------------------------Data Generator----------------------------------------------------------")
 
 MaleFirstNames = []
@@ -29,5 +31,28 @@ print(MaleFirstNames[personID] + " " + LastNames[personID] + ":")
 
 print(rnd.choices(symptoms,weights=(1,1,1,1,1),k=(rnd.randint(1,4)))) #list, weights=odds per item, *, cum_weights=odds per item out of 100, # of items picked
 
+rows = []
+ 
+# field names
+fields = ['First Name', 'Last Name']
+htnames = int(len(LastNames)/2) # Half of Total Number of nNames
+print(htnames)
 
+for i in range(0,int(htnames)):
+    rows.append([MaleFirstNames[i],LastNames[i]])
+
+for i in range(0,int(htnames)):
+    rows.append([FemaleFirstNames[i],LastNames[i+htnames]])
+
+print(rows)
+
+filename = "GeneratedMedicalData.csv"
+
+with open(filename, 'w') as csvfile:
+
+    csvwriter = csv.writer(csvfile)
+
+    csvwriter.writerow(fields)
+     
+    csvwriter.writerows(rows)
 
