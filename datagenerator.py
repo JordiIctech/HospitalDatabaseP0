@@ -34,15 +34,15 @@ print(rnd.choices(symptoms,weights=(1,1,1,1,1),k=(rnd.randint(1,4)))) #list, wei
 rows = []
  
 # field names
-fields = ['First Name', 'Last Name']
+fields = ['First Name', 'Last Name'] # Add ID
 htnames = int(len(LastNames)/2) # Half of Total Number of nNames
 print(htnames)
 
 for i in range(0,int(htnames)):
-    rows.append([MaleFirstNames[i],LastNames[i]])
+    rows.append([MaleFirstNames[i],LastNames[i]]) # Add a third entry just with number i being passed
 
 for i in range(0,int(htnames)):
-    rows.append([FemaleFirstNames[i],LastNames[i+htnames]])
+    rows.append([FemaleFirstNames[i],LastNames[i+htnames]]) # Add a third entry just with number i being passed
 
 print(rows)
 
