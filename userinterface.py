@@ -3,6 +3,8 @@ print("\n")
 
 from pynput import keyboard
 
+from datagenerator import LastNames
+
 #Outer enter, empty box print("\u2610\n") 
 
 #Inner enter, filled box print("\u2612\n") 
@@ -56,7 +58,7 @@ while True:
         
         selected = options.index(xdballot)
         print(selected)
-
+        print(LastNames[selected])
 
     
 
