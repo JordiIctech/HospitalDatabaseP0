@@ -26,21 +26,23 @@ def listenOn():
 
 
 # ---------------------------------------------------------- Using the definitions
-
+for i in range(0,len(options)):
+    print(options[i])
 
 while True:
-    print("____________________________________________HELLO USER_____________________________________________\n")
     
-    for i in range(0,len(options)):
-        print(options[i])
-
+    
     listenOn()
 
     if on_press.currentkey == keyboard.Key.esc:
         break
 
+    if on_press.currentkey == keyboard.Key.enter:
+        print("Guat")
 
     else:
+        print("____________________________________________HELLO USER_____________________________________________\n")
+
         if on_press.currentkey == keyboard.Key.down:
             options.insert(0,emptyballot)
             options.pop()
@@ -51,4 +53,11 @@ while True:
 
         for i in range(0,len(options)):
             print(options[i])
+        
+        selected = options.index(xdballot)
+        print(selected)
+
+
+    
+
 
