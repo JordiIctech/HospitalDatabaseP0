@@ -3,7 +3,7 @@ use project0database;
 DROP TABLE IF EXISTS patients;
 CREATE TABLE patients (
     id INT NOT NULL AUTO_INCREMENT,
-    firsname VARCHAR(255) NOT NULL,
+    firstname VARCHAR(255) NOT NULL,
     lastname VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 );
