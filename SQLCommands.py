@@ -23,7 +23,7 @@ cursor.execute("""CREATE TABLE patients (
     PRIMARY KEY (id)
 );""")
 
-cursor.execute("""LOAD DATA INFILE "C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/GeneratedMedicalData.csv" 
+cursor.execute("""LOAD DATA INFILE "C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/GeneratedPAtientData.csv" 
 INTO TABLE patients 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
