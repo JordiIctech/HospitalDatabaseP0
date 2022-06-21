@@ -1,6 +1,7 @@
 # Make it so python sends to csv and then executes the MYSQL script. The MYSQL script reads the CSV and updates the table. Python can also ask for specific IDs from a premade database in MYSQL.
 
 print("#----------------------------------------------------------Connector----------------------------------------------------------")
+print("#----------------------------------------------------------Test----------------------------------------------------------")
 from sqlite3 import OperationalError
 import pymysql.cursors
 from secret import impassword
@@ -13,9 +14,6 @@ connection = pymysql.connect(
                         )
 
 cursor = connection.cursor()
-
-tq = ""
-
 
 def executeScriptsFromFile(filename):
     # Open and read the file as a single buffer
@@ -42,7 +40,7 @@ def executeScriptsFromFile(filename):
             except (OperationalError):
                 print("Command skipped: ")
 
-executeScriptsFromFile("Testing.sql")
+executeScriptsFromFile("ImportingCSV.sql") #Add filename here
 
 connection.commit()
 
