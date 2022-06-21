@@ -1,4 +1,6 @@
 print("#----------------------------------------------------------Main----------------------------------------------------------")
+#Need MYSQL Open
+
 import pymysql.cursors
 
 from secret import impassword
