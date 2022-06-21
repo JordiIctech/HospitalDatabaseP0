@@ -51,19 +51,15 @@ def insertSQL():
     insertid = 11
     insertfirstname = "Jordi"
     insertlastname = "Ictech"
-    print((f"""
-INSERT INTO patients (id,firstname,lastname)
-VALUES({insertid},{insertfirstname},{insertlastname});"""))
     try:
-        cursor.execute(f"""
-INSERT INTO patients (id,firstname,lastname)
-VALUES({insertid},'{insertfirstname}','{insertlastname}');""")
+        cursor.execute(f"""INSERT INTO patients (id,firstname,lastname)
+        VALUES({insertid},'{insertfirstname}','{insertlastname}');""")
     except:
         print("Can't add patient in target location.")
 
 def deleteSQL():
     deletelocation = "firstname" #str(input("id, firstname or lastname? "))
-    deleteinformation = "Jen" #str(input(f"What is the {deletelocation} for the patient? "))
+    deleteinformation = "Jill" #str(input(f"What is the {deletelocation} for the patient? "))
     try:
         cursor.execute(f"DELETE FROM patients WHERE {deletelocation} = '{deleteinformation}';")
 
