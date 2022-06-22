@@ -74,10 +74,43 @@ def symptomcreator():
 
         csvwriter = csv.writer(csvfile)
 
-        csvwriter.writerow(["PatientN", "Symptoms"])
+        csvwriter.writerow(["PatientN", "S1","S2","S3","S4","S5"]) # Need to add disease ID
         
         csvwriter.writerows(symptomslists)
 
 #patientnamegenerate()
 
 #symptomcreator()
+
+# DISEASES ------------------------------------------------------------
+
+def diseasecreator():  
+    print("----------------Generating---------------")
+    
+    listeddiseases = ["Flu","Common Cold", "Migraine", "Rhinitis", "Allergy", "Area Dependant", "Common Cold", "Lack of Sleep", "Respiratory Infection"]
+    symptomsperdisease=[[101,"Flu","Sneeze", "Fatigue", "Cough"],[102,"Common Cold", "Sneeze", "Fatigue", "Runny Nose"],[103,"Migraine", "Fatigue", "Headache",NULL],[104,"Rhinitis", "Inflamation", "Sneezing", "Fatigue"],[105,"Allergy", "Sneeze",NULL,NULL],[106,"Area Dependant", "Inflamation",NULL,NULL],[107,"Common Cold","Runny Nose",NULL,NULL],[108,"Lack of Sleep", "Fatigue",NULL,NULL],[109,"Respiratory Infection", "Coughing",NULL,NULL]]
+
+    filename = "C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/GeneratedDiseaseData.csv"
+    with open(filename, 'w', newline='') as csvfile:
+
+        csvwriter = csv.writer(csvfile)
+
+        csvwriter.writerow(["DiseaseID","Disease","S1","S2","S3"]) # Headlines
+            
+        csvwriter.writerows(symptomsperdisease) # Rows [[]] list of lists, each inner list is a row.
+
+    # Flu: Sneeze, Fatigue, Cough
+    # Common Cold: Sneeze, Fatigue, Runny Nose
+    # Migraine: Fatigue, Headache
+    # Rhinitis: Inflamation, Sneezing, Fatigue
+    # Allergy: Sneeze
+    # Area Dependant: Inflamation
+    # Common Cold: Runny Nose
+    # Lack of Sleep: Fatigue
+    # Respiratory Infection: Coughing
+   
+    
+diseasecreator()
+
+# Future work: Create symptom table, show mortality rates.
+# Make a list of possible disease rather than just one.

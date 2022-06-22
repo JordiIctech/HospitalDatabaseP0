@@ -36,3 +36,22 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 SELECT * FROM symptoms;
+
+DROP TABLE IF EXISTS disease;
+CREATE TABLE disease (
+    diseaseid VARCHAR(255) NOT NULL,
+    diseasen VARCHAR(255) NOT NULL,
+    s1 VARCHAR(255) NOT NULL,
+    s2 VARCHAR(255),
+    s3 VARCHAR(255),
+    PRIMARY KEY (diseaseid)
+);
+
+LOAD DATA INFILE "C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/GeneratedDiseaseData.csv" 
+INTO TABLE disease 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+SELECT * FROM disease
