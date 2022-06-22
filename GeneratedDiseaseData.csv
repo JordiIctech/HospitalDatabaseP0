@@ -1,0 +1,10 @@
+DiseaseID,Disease,S1,S2,S3
+101,Flu,Sneeze,Fatigue,Cough
+102,Common Cold,Sneeze,Fatigue,Runny Nose
+103,Migraine,Fatigue,Headache,NULL
+104,Rhinitis,Inflamation,Sneezing,Fatigue
+105,Allergy,Sneeze,NULL,NULL
+106,Area Dependant,Inflamation,NULL,NULL
+107,Common Cold,Runny Nose,NULL,NULL
+108,Lack of Sleep,Fatigue,NULL,NULL
+109,Respiratory Infection,Coughing,NULL,NULL

@@ -1,0 +1,11 @@
+PatientN,S1,S2,S3,S4,S5,diseaseid
+1,Fatigue,Inflamation,Sneezing,NULL,NULL,104
+2,Cough,Fatigue,Inflamation,NULL,NULL,104
+3,Cough,Fatigue,Headache,Inflamation,Sneezing,101
+4,Fatigue,Headache,Inflamation,NULL,NULL,104
+5,Inflamation,NULL,NULL,NULL,NULL,106
+6,Cough,Fatigue,Headache,NULL,NULL,101
+7,Headache,NULL,NULL,NULL,NULL,103
+8,Cough,Fatigue,Headache,Inflamation,Sneezing,103
+9,Cough,Inflamation,NULL,NULL,NULL,109
+10,Cough,Fatigue,NULL,NULL,NULL,108
