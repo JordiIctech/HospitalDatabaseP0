@@ -34,8 +34,8 @@ cursor.execute("""SELECT * FROM patients;""")
 
 
 def showinfoSQL():
-    specificcolumn = "*" #str(input("What column would you want to see? "))
-    specifictable = "patients" #str(input("What table would you want to see? "))
+    specificcolumn = str(input("What column would you want to see? "))
+    specifictable = str(input("What table would you want to see? (patients, symptoms, disease)"))
     try: 
         sql = f"SELECT {specificcolumn} FROM {specifictable}"
         cursor.execute(sql)
