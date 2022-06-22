@@ -49,34 +49,38 @@ def showinfoSQL():
 
 def insertSQL():
     insertid = 11
-    insertfirstname = "Jordi"
-    insertlastname = "Ictech"
+    insertfullname= input("What is the patient's full name? ")
+    fullnamelist = insertfullname.split(" ")
+    insertfirstname = fullnamelist[0]
+    insertlastname = fullnamelist[1]
     try:
         cursor.execute(f"""INSERT INTO patients (id,firstname,lastname)
         VALUES({insertid},'{insertfirstname}','{insertlastname}');""")
+
     except:
         print("Can't add patient in target location.")
 
 def deleteSQL():
-    deletelocation = "firstname" #str(input("id, firstname or lastname? "))
-    deleteinformation = "Jill" #str(input(f"What is the {deletelocation} for the patient? "))
+    deletelocation = str(input("id, firstname or lastname? "))
+    deleteinformation = str(input(f"What is the {deletelocation} for the patient? "))
     try:
         cursor.execute(f"DELETE FROM patients WHERE {deletelocation} = '{deleteinformation}';")
 
     except:
         print("Patient not found.")
 
+def saveSQL():
+    connection.commit()
 
-insertSQL()
+#insertSQL()
 
-deleteSQL()
+#deleteSQL()
 
-showinfoSQL()
-
+#showinfoSQL()
 
 
 connection.commit()
 
-connection.close()
+#connection.close()
 
 

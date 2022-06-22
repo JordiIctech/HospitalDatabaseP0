@@ -1,11 +1,10 @@
 import names
 import random as rnd
 import csv
-
 from pymysql import NULL
 
 print("#----------------------------------------------------------Data Generator----------------------------------------------------------")
-
+    
 MaleFirstNames = []
 FemaleFirstNames = []
 LastNames = []
@@ -79,6 +78,6 @@ def symptomcreator():
         
         csvwriter.writerows(symptomslists)
 
-patientnamegenerate()
+#patientnamegenerate()
 
-symptomcreator()
+#symptomcreator()

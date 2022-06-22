@@ -1,10 +1,10 @@
 print("-------------------------------------------Menu----------------------------------------------")
 print("\n")
-
 from click import option
+from numpy import save
 from pynput import keyboard
-
 from datagenerator import LastNames
+from SQLCommands import insertSQL, deleteSQL, showinfoSQL, saveSQL
 
 #Outer enter, empty box print("\u2610\n") 
 
@@ -12,12 +12,13 @@ from datagenerator import LastNames
 
 emptyballot = "    \u2610"
 
+
 xdballot = "    \u2612"
 
 ballots = [emptyballot, xdballot]
 
-options = [xdballot, emptyballot, emptyballot, emptyballot]
-optionnames = ["View Patients","Add Patient","Delete Patient","Exit"]
+options = [xdballot, emptyballot, emptyballot, emptyballot, emptyballot]
+optionnames = ["View Patients","Add Patient","Delete Patient","Save", "Exit"]
 
 selected = 0
 
@@ -45,15 +46,35 @@ while inmenu == 1:
         break
 
     if on_press.currentkey == keyboard.Key.enter:
-        if selected == 1:
-            print("One")
+
+        if selected == 0:
+            showinfoSQL()
+            print("Showing Patients")
+            
+
+        elif selected == 1:
+            insertSQL()
+            print("Adding value, please save.")
+
+        
+        elif selected == 2:
+            deleteSQL()
+            print("Deleting value, please save.")
+
 
         elif selected == 3:
-            print("Goodbye")
+            saveSQL()
+            print("Saved")
+            inmenu = 0
+            break
+
+        elif selected == 4:
+            print("Exiting")
+            inmenu = 0
             break
 
         else:   
-            print("Guat")
+            print("Erros: Please contact administrator.")
 
     else:
         print("____________________________________________Menu_____________________________________________\n")
@@ -71,8 +92,33 @@ while inmenu == 1:
         
         selected = options.index(xdballot)
         print(selected)
-        print(LastNames[selected])
 
-    
+
+# IMPORTANT: DO NOT CLICK COMMAND LINE WHEN USING ARROW KEYS, CLICK DOWN WHERE CODE IS WRITTEN.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
