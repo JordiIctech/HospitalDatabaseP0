@@ -55,19 +55,55 @@ symptoms = ["Cough","Sneezing","Fatigue", "Inflamation", "Headache"]
 
 def symptomcreator():  
     #modifiedsymptomkey = len(symptomkey)+100 #Counts characters in string to make key, + 100 for uniqueness.
+    symptomkeys=[]
     for i in range(0,len(LastNames)):
         print("----------------Generating---------------")
         ranquant = rnd.randint(1,5)                          # Makes random number of symptoms
         symptomselection = rnd.sample(symptoms, ranquant)    # Choses random symptoms based on number of symptoms
         symptomselection.sort()                              # Puts them in order
         symptomkey = [",".join(symptomselection)] #Joins strings into on
+        symptomkeys.append(symptomkey)
         symptomselectionV2 = [NULL,NULL,NULL,NULL,NULL] #symptomselectionV2 = ["NULL", "NULL", "NULL", "NULL", "NULL"]
         for z in range(0,len(symptomselection)):
             symptomselectionV2[z]=symptomselection[z]
+            #print(symptomkeys)
 
         symptomselectionV2.insert(0,i+1)
         symptomslists.append(symptomselectionV2)
-        print(symptomselectionV2)
+        print(symptomkey)
+        print(symptomkeys[i])
+#Order: Rhinitis, Flu, Common Cold, Migraine
+        if "Inflamation" in symptomkey:
+            if "Sneeze" in symptomkey:
+                if "Fatigue" in symptomkey:
+                    print("--------Rhinitis----------")
+
+        elif "Sneeze" in symptomkey:
+            if "Fatigue" in symptomkey:
+                if "Cough" in symptomkey:
+                    print("----------Flu-------")
+
+        elif "Sneeze" and "Fatigue" and "Runny Nose" in symptomkeys[i]:
+            print("----------Common Cold-------")
+
+        elif "Fatigue" and "Headache" in symptomkeys[i]:
+            print("----------Migraine-------")
+
+        elif "Sneeze" in symptomkeys[i]:
+            print("----------Allergy-------")    
+
+        elif "Runny Nose" in symptomkeys[i]:
+            print("----------Common Cold-------")
+
+        elif "Cough" in symptomkeys[i]:
+            print("----------Respiratory Infection-------")
+        
+        elif "Inflamation" in symptomkeys[i]:
+            print("----------Area Dependant-------")
+
+        elif "Fatigue" in symptomkeys[i]:
+            print("----------Lack of Sleep-------")
+        
     
     filename = "C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/GeneratedSymptomData.csv"
     with open(filename, 'w', newline='') as csvfile:
@@ -78,9 +114,9 @@ def symptomcreator():
         
         csvwriter.writerows(symptomslists)
 
-#patientnamegenerate()
+    
 
-#symptomcreator()
+#patientnamegenerate()
 
 # DISEASES ------------------------------------------------------------
 
@@ -110,7 +146,9 @@ def diseasecreator():
     # Respiratory Infection: Coughing
    
     
-diseasecreator()
+#diseasecreator()
+#patientnamegenerate()
+#symptomcreator()
 
 # Future work: Create symptom table, show mortality rates.
 # Make a list of possible disease rather than just one.

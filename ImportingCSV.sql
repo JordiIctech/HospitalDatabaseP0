@@ -25,6 +25,7 @@ CREATE TABLE symptoms (
     s3 VARCHAR(255),
     s4 VARCHAR(255),
     s5 VARCHAR(255),
+    diseaseid VARCHAR(255),
     PRIMARY KEY (patientn)
 );
 

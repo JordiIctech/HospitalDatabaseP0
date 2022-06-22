@@ -65,7 +65,8 @@ def deleteSQL():
     deleteinformation = str(input(f"What is the {deletelocation} for the patient? "))
     try:
         cursor.execute(f"DELETE FROM patients WHERE {deletelocation} = '{deleteinformation}';")
-
+        
+        cursor.execute(f"DELETE FROM symptoms WHERE patientn = '{deleteinformation}';")
     except:
         print("Patient not found.")
 
