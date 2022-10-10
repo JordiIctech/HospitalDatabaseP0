@@ -1,6 +1,6 @@
 # HospitalDatabaseP0
 
 ## Technologies:
--Python
--SQL
--MySQL
+- Python
+- SQL
+- MySQL
